@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6855e8">
+  <title>SkillTech | Discover Your Potential</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="brand" data-page="dashboard">
+        <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span>Skill<span class="brand-light">Tech</span></span>
+      </a>
+
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="nav-menu">
+        <button class="nav-link active" data-page="dashboard">
+          <i class="fa-solid fa-house"></i> Dashboard
+        </button>
+        <button class="nav-link" data-page="finder">
+          <i class="fa-solid fa-compass"></i> Skill Finder
+        </button>
+        <button class="nav-link" data-page="roadmap">
+          <i class="fa-solid fa-map"></i> Learning Roadmap
+        </button>
+        <button class="nav-link" data-page="resources">
+          <i class="fa-solid fa-book-open"></i> Free Resources
+        </button>
+        <button class="nav-link" data-page="progress">
+          <i class="fa-solid fa-chart-line"></i> Progress Tracker
+        </button>
+        <button class="nav-link" data-page="coding">
+          <i class="fa-solid fa-code"></i> Coding Arena
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="side-tip">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h4>Keep learning!</h4>
+          <p>Small steps today can create big opportunities tomorrow.</p>
+        </div>
+        <p class="copyright">© 2026 SkillTech</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menuToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div>
+          <p class="eyebrow">YOUR PERSONAL LEARNING SPACE</p>
+          <h2 id="pageTitle">Dashboard</h2>
+        </div>
+        <div class="topbar-right">
+          <span class="status-dot"></span>
+          <span class="online-text">Ready to learn</span>
+          <div class="avatar">S</div>
+        </div>
+      </header>
+
+      <div class="content">
+
+        <!-- DASHBOARD -->
+        <section class="page active" id="dashboard">
+          <div class="hero">
+            <div class="hero-content">
+              <span class="hero-tag"><i class="fa-solid fa-sparkles"></i> YOUR FUTURE STARTS HERE</span>
+              <h1>Discover Your Skills.<br>Build Your <span>Future.</span></h1>
+              <p>Find your strengths, learn in-demand skills, and turn your potential into progress.</p>
+              <button class="btn btn-white" data-go="finder">
+                Find My Skills <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="hero-art">
+              <div class="art-circle"><i class="fa-solid fa-graduation-cap"></i></div>
+              <span class="float-icon float-one"><i class="fa-solid fa-code"></i></span>
+              <span class="float-icon float-two"><i class="fa-solid fa-lightbulb"></i></span>
+              <span class="float-icon float-three"><i class="fa-solid fa-trophy"></i></span>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h3>Your learning overview</h3>
+              <p>Every small step counts.</p>
+            </div>
+            <button class="text-button" data-go="progress">View progress <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-icon purple"><i class="fa-solid fa-list-check"></i></div>
+              <p>Tasks completed</p>
+              <h2 id="dashTasks">0</h2>
+              <span class="stat-note">Keep moving forward</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon blue"><i class="fa-solid fa-code"></i></div>
+              <p>Coding challenges</p>
+              <h2 id="dashCoding">0</h2>
+              <span class="stat-note">Challenges solved</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon orange"><i class="fa-solid fa-fire"></i></div>
+              <p>Points earned</p>
+              <h2 id="dashPoints">0</h2>
+              <span class="stat-note">Your learning score</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon green"><i class="fa-solid fa-award"></i></div>
+              <p>Achievements</p>
+              <h2 id="dashBadges">0</h2>
+              <span class="stat-note">Badges unlocked</span>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel">
+              <div class="section-heading">
+                <div>
+                  <h3>Continue your journey</h3>
+                  <p>Your selected learning path</p>
+                </div>
+                <i class="fa-solid fa-route heading-icon"></i>
+              </div>
+              <div id="dashboardRoadmap"></div>
+            </article>
+
+            <article class="panel">
+              <div class="section-heading">
+                <div>
+                  <h3>Quick activities</h3>
+                  <p>Choose your next step</p>
+                </div>
+              </div>
+              <div class="quick-list">
+                <button class="quick-item" data-go="coding">
+                  <span class="quick-icon purple"><i class="fa-solid fa-terminal"></i></span>
+                  <span><strong>Take a coding test</strong><small>Challenge your logic</small></span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="quick-item" data-go="finder">
+                  <span class="quick-icon blue"><i class="fa-solid fa-compass"></i></span>
+                  <span><strong>Discover your skills</strong><small>Find your learning path</small></span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button class="quick-item" data-go="resources">
+                  <span class="quick-icon green"><i class="fa-solid fa-book"></i></span>
+                  <span><strong>Explore free resources</strong><small>Learn without spending</small></span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <h3>Explore SkillTech</h3>
+              <p>Everything you need to start learning.</p>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <button class="feature-card" data-go="finder">
+              <span class="feature-icon purple"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+              <h4>Skill Finder</h4>
+              <p>Discover skills that match your interests.</p>
+              <span class="feature-link">Explore <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            <button class="feature-card" data-go="roadmap">
+              <span class="feature-icon blue"><i class="fa-solid fa-map-location-dot"></i></span>
+              <h4>Learning Roadmap</h4>
+              <p>Follow simple steps to build your skills.</p>
+              <span class="feature-link">Start learning <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+            <button class="feature-card" data-go="coding">
+              <span class="feature-icon orange"><i class="fa-solid fa-laptop-code"></i></span>
+              <h4>Coding Arena</h4>
+              <p>Practice coding, logic, and debugging.</p>
+              <span class="feature-link">Enter arena <i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+          </div>
+        </section>
+
+        <!-- SKILL FINDER -->
+        <section class="page" id="finder">
+          <div class="page-intro">
+            <span class="pill">PERSONALIZED DISCOVERY</span>
+            <h1>Find the skill that fits you.</h1>
+            <p>Answer these questions to discover a starting point for your learning journey.</p>
+          </div>
+
+          <form class="panel quiz-panel" id="skillQuiz">
+            <div class="quiz-progress"><span id="quizProgress"></span></div>
+
+            <div class="question-block">
+              <p class="question-number">QUESTION 01</p>
+              <h3>What do you enjoy most?</h3>
+              <div class="choice-grid">
+                <label class="choice"><input type="radio" name="interest" value="tech" required><span><i class="fa-solid fa-code"></i><strong>Technology</strong><small>Websites, apps, and coding</small></span></label>
+                <label class="choice"><input type="radio" name="interest" value="creative"><span><i class="fa-solid fa-palette"></i><strong>Creativity</strong><small>Design, visuals, and ideas</small></span></label>
+                <label class="choice"><input type="radio" name="interest" value="business"><span><i class="fa-solid fa-chart-column"></i><strong>Business & Data</strong><small>Numbers, planning, and analysis</small></span></label>
+                <label class="choice"><input type="radio" name="interest" value="communication"><span><i class="fa-solid fa-comments"></i><strong>Communication</strong><small>Writing, speaking, and teamwork</small></span></label>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <p class="question-number">QUESTION 02</p>
+              <h3>What is your main goal?</h3>
+              <div class="choice-grid two">
+                <label class="choice"><input type="radio" name="goal" value="career" required><span><strong>Prepare for a career</strong><small>Build job-ready skills</small></span></label>
+                <label class="choice"><input type="radio" name="goal" value="project"><span><strong>Build projects</strong><small>Turn ideas into reality</small></span></label>
+                <label class="choice"><input type="radio" name="goal" value="confidence"><span><strong>Improve confidence</strong><small>Learn at my own pace</small></span></label>
+                <label class="choice"><input type="radio" name="goal" value="explore"><span><strong>Explore something new</strong><small>Discover my interests</small></span></label>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <p class="question-number">QUESTION 03</p>
+              <h3>What is your current experience?</h3>
+              <div class="choice-grid three">
+                <label class="choice"><input type="radio" name="level" value="beginner" required><span><strong>Beginner</strong><small>Starting from zero</small></span></label>
+                <label class="choice"><input type="radio" name="level" value="some"><span><strong>Some experience</strong><small>I know the basics</small></span></label>
+                <label class="choice"><input type="radio" name="level" value="experienced"><span><strong>Experienced</strong><small>Ready for challenges</small></span></label>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Find My Recommended Skill <i class="fa-solid fa-arrow-right"></i></button>
+            <div id="quizResult" class="result-box hidden" aria-live="polite"></div>
+          </form>
+        </section>
+
+        <!-- ROADMAP -->
+        <section class="page" id="roadmap">
+          <div class="page-intro">
+            <span class="pill">YOUR LEARNING PLAN</span>
+            <h1>Turn learning into progress.</h1>
+            <p>Choose a skill and follow its roadmap one task at a time.</p>
+          </div>
+
+          <div class="panel roadmap-toolbar">
+            <label for="roadmapSelect">Choose your learning path</label>
+            <select id="roadmapSelect"></select>
+            <div class="overall-progress">
+              <div class="progress-label"><span>Overall completion</span><strong id="roadmapPercent">0%</strong></div>
+              <div class="progress-track"><span id="roadmapBar"></span></div>
+            </div>
+          </div>
+          <div id="roadmapContent" class="roadmap-list"></div>
+        </section>
+
+        <!-- RESOURCES -->
+        <section class="page" id="resources">
+          <div class="page-intro">
+            <span class="pill">LEARN FOR FREE</span>
+            <h1>Good resources. Zero tuition fees.</h1>
+            <p>Explore learning websites and start building practical skills.</p>
+          </div>
+          <div class="filter-row" id="resourceFilters">
+            <button class="filter-btn active" data-filter="all">All resources</button>
+            <button class="filter-btn" data-filter="tech">Technology</button>
+            <button class="filter-btn" data-filter="creative">Design</button>
+            <button class="filter-btn" data-filter="business">Data & Business</button>
+            <button class="filter-btn" data-filter="communication">Communication</button>
+          </div>
+          <div class="resource-grid" id="resourceGrid"></div>
+        </section>
+
+        <!-- PROGRESS -->
+        <section class="page" id="progress">
+          <div class="page-intro">
+            <span class="pill">YOUR ACHIEVEMENTS</span>
+            <h1>Look how far you've come.</h1>
+            <p>Your learning activity, coding results, and milestones in one place.</p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-icon purple"><i class="fa-solid fa-check-double"></i></div><p>Tasks completed</p><h2 id="progressTasks">0</h2></article>
+            <article class="stat-card"><div class="stat-icon blue"><i class="fa-solid fa-code"></i></div><p>Challenges solved</p><h2 id="progressCoding">0</h2></article>
+            <article class="stat-card"><div class="stat-icon orange"><i class="fa-solid fa-star"></i></div><p>Total points</p><h2 id="progressPoints">0</h2></article>
+            <article class="stat-card"><div class="stat-icon green"><i class="fa-solid fa-medal"></i></div><p>Badges earned</p><h2 id="progressBadges">0</h2></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel">
+              <h3>Roadmap completion</h3>
+              <p class="muted">Progress in each learning path</p>
+              <div id="allRoadmapProgress" class="progress-breakdown"></div>
+            </article>
+            <article class="panel">
+              <h3>Your badges</h3>
+              <p class="muted">Unlock achievements as you learn.</p>
+              <div id="badgeGrid" class="badge-grid"></div>
+            </article>
+          </div>
+          <article class="panel reset-panel">
+            <div><h3>Start fresh?</h3><p class="muted">This clears saved tasks, scores, and quiz choices from this browser.</p></div>
+            <button class="btn btn-danger" id="resetProgress"><i class="fa-solid fa-rotate-left"></i> Reset Progress</button>
+          </article>
+        </section>
+
+        <!-- CODING ARENA -->
+        <section class="page" id="coding">
+          <div class="page-intro">
+            <span class="pill">PRACTICE • SOLVE • IMPROVE</span>
+            <h1>Welcome to Coding Arena.</h1>
+            <p>Test your knowledge, debug code, predict outputs, and train your logical thinking.</p>
+          </div>
+
+          <div class="arena-stats">
+            <div><i class="fa-solid fa-trophy"></i><span><strong id="arenaSolved">0</strong><small>Solved</small></span></div>
+            <div><i class="fa-solid fa-star"></i><span><strong id="arenaScore">0</strong><small>Points</small></span></div>
+            <div><i class="fa-solid fa-fire"></i><span><strong id="arenaStreak">0</strong><small>Challenge streak</small></span></div>
+          </div>
+
+          <div class="arena-tabs" id="arenaTabs">
+            <button class="arena-tab active" data-mode="coding"><i class="fa-solid fa-code"></i> Coding Test</button>
+            <button class="arena-tab" data-mode="bug"><i class="fa-solid fa-bug"></i> Bug Hunter</button>
+            <button class="arena-tab" data-mode="detective"><i class="fa-solid fa-magnifying-glass"></i> Code Detective</button>
+            <button class="arena-tab" data-mode="logic"><i class="fa-solid fa-brain"></i> Logic Battle</button>
+            <button class="arena-tab" data-mode="project"><i class="fa-solid fa-hammer"></i> Project Lab</button>
+          </div>
+
+          <div class="arena-toolbar">
+            <label>Difficulty
+              <select id="difficultySelect">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </label>
+            <label>Challenge
+              <select id="challengeSelect"></select>
+            </label>
+            <button class="btn btn-outline" id="newChallenge"><i class="fa-solid fa-shuffle"></i> Random</button>
+          </div>
+
+          <div class="coding-layout">
+            <article class="panel challenge-panel">
+              <div class="challenge-meta"><span id="challengeType" class="pill">CODING TEST</span><span id="challengeDifficulty">BEGINNER</span></div>
+              <h2 id="challengeTitle">Print Hello World</h2>
+              <p id="challengeDescription"></p>
+              <div id="challengeDetails"></div>
+              <button class="text-button hint-button" id="showHint"><i class="fa-regular fa-lightbulb"></i> Show hint</button>
+              <p id="hintText" class="hint-box hidden"></p>
+              <div id="challengeAnswer" class="answer-area"></div>
+            </article>
+
+            <article class="panel editor-panel">
+              <div class="editor-top">
+                <span><i class="fa-solid fa-circle-dot"></i> Practice editor</span>
+                <label for="languageSelect" class="sr-only">Programming language</label>
+                <select id="languageSelect">
+                  <option value="javascript">JavaScript</option>
+                  <option value="python">Python</option>
+                  <option value="html">HTML</option>
+                  <option value="css">CSS</option>
+                </select>
+              </div>
+              <textarea id="codeEditor" spellcheck="false" aria-label="Code editor" placeholder="Write your code here..."></textarea>
+              <div class="editor-actions">
+                <button class="btn btn-outline" id="resetEditor"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                <button class="btn btn-primary" id="runChallenge"><i class="fa-solid fa-check"></i> Check Answer</button>
+              </div>
+              <div class="output-panel">
+                <div class="output-heading"><span>RESULT</span><span id="outputStatus">Waiting for submission</span></div>
+                <pre id="outputText">Choose a challenge and submit your answer to see feedback.</pre>
+              </div>
+            </article>
+          </div>
+
+          <div class="panel daily-panel">
+            <div class="daily-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div><h3>Daily Coding Challenge</h3><p>Practice regularly to improve your problem-solving skills.</p></div>
+            <button class="btn btn-outline" id="dailyChallenge">Try Today's Challenge <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+
+          <h1>Explore Your Skills.<br>Unlock Your <span>Universe.</span></h1>
+<p>Find your strengths, learn in-demand skills, and chart a future that’s yours.</p>
+<button class="btn btn-white" data-go="finder">
+  Start Your Journey <i class="fa-solid fa-arrow-right"></i>
+</button>
+          <p class="disclaimer">Learning prototype: answers are checked using predefined rules. This editor does not execute arbitrary JavaScript or Python. Real code execution requires a secure execution service.</p>
+        </section>
+
+        <footer class="footer">
+          <span>Made for curious minds <i class="fa-solid fa-heart"></i></span>
+          <span>SkillTech · Learn something new every day</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
